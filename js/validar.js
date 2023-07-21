@@ -75,44 +75,38 @@ function Validarurl(url){
 
 
 
+        // 3<!--validar fecha-->
 
 function validarfecha(fecha1){
         const fecha = fecha1.trim();
-const pattern = /^\d{4}([\-/. ])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/
-console.log("sin limpiar:", fecha,"y limpio",fecha)
-if(typeof fecha !=='string' || fecha ==="" || !pattern.test(fecha)){
-        console.log("entro en el if ")
-        return false
-}else{
-return true
+        const pattern = /^\d{4}([\-/. ])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/
+        console.log("sin limpiar:", fecha,"y limpio",fecha)
+        if(typeof fecha !=='string' || fecha ==="" || !pattern.test(fecha)){
+                console.log("entro en el if ")
+                return false
+        }else{
+                return true
+        }
 }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 3<!--validar fecha-->
 
 // 4<!--validar tiempo-->
+
+
+function validartiempo(tiempo1){
+        const tiempo = tiempo1.trim();
+        const pattern = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/
+        console.log("sin limpiar:", tiempo,"y limpio",tiempo)
+        if(typeof tiempo !=='string' || tiempo ==="" || !pattern.test(tiempo)){
+                console.log("entro en el if")
+                return false
+        }else{
+                return true
+
+        }
+}
+console.log(validartiempo("00:00"))
+
 
 // 5<!--validar fecha,hora y nacimiento -->
 
