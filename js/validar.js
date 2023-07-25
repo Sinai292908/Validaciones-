@@ -89,15 +89,15 @@ function validarfecha(fecha1){
         }
 }
 
-
+console.log(validarfecha("12/12/2023"))
 // 4<!--validar tiempo-->
 
 
 function validartiempo(tiempo1){
         const tiempo = tiempo1.trim();
-        const pattern = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/
-        console.log("sin limpiar:", tiempo,"y limpio",tiempo)
-        if(typeof tiempo !=='string' || tiempo ==="" || !pattern.test(tiempo)){
+        const pattern = /^(0?[1-9]|1[0-2]):[0-5][0-9]$/;
+        // console.log("sin limpiar:", tiempo,"y limpio",tiempo)
+        if(typeof tiempo !=='string' || tiempo === "" || !pattern.test(tiempo)) {
                 console.log("entro en el if")
                 return false
         }else{
@@ -105,13 +105,38 @@ function validartiempo(tiempo1){
 
         }
 }
-console.log(validartiempo("00:00"))
+console.log(validartiempo("02:20"))
 
 
 // 5<!--validar fecha,hora y nacimiento -->
+function validarfechahoranacimiento(nacimiento1){
+
+        const nacimiento = nacimiento1.trim();
+        const pattern = /^([0-2][0-9]|3[0-1])(\/|-)(0[1-9]|1[0-2])\2(\d{4})(\s)([0-1][0-9]|2[0-3])(:)([0-5][0-9])$/
+        if(typeof nacimiento !=='string' || nacimiento === "" || !pattern.test(nacimiento)){
+console.log("entro en el if")
+return false
+        }else{
+return true
+        }
+        }
+        
+console.log(validarfechahoranacimiento("22/13:23/2023"))
+
 
 // 6<!--validar mes -->
+function validarmes(mes1){
+        const mes = mes1.trim();
+        const pattern = /(\b\d{1,2}\D{0,3})?\b(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|(Nov|Dec)(?:ember)?)\D?(\d{1,2}(st|nd|rd|th)?)?(([,.\-\/])\D?)?((19[7-9]\d|20\d{2})|\d{2})*;/
+if(typeof mes !=='string' || mes ==="" || !pattern.test(mes)){
+        console.log("entro en el if")
+return false
+        }else{
+return true
 
+}
+}
+ console.log(validarmes("enero de 2022"))
 // 7<!--validar semana-->
 
 // 8<!-- validar de un rango numerico min 10- max 10-->
